@@ -11,8 +11,10 @@ export default function Home() {
     <main className="landing">
       <section className="landing-content" aria-label="Palmer Codeworks">
         <h1>Palmer Codeworks</h1>
-        <ContactLink />
       </section>
+      <div className="contact-area" aria-label="Contact Palmer Codeworks">
+        <ContactLink />
+      </div>
       <footer className="site-footer">
         <p>
           Image by{" "}

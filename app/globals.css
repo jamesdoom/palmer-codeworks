@@ -44,7 +44,7 @@ a {
   display: flex;
   justify-content: center;
   min-height: 100svh;
-  padding: 28px 28px 58px;
+  padding: 28px 28px 138px;
   position: relative;
   text-align: center;
 }
@@ -53,8 +53,16 @@ a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: clamp(18px, 4vw, 34px);
   position: relative;
+  z-index: 1;
+}
+
+.contact-area {
+  align-items: center;
+  display: flex;
+  inset: auto 18px 86px;
+  justify-content: center;
+  position: fixed;
   z-index: 1;
 }
 
@@ -131,7 +139,7 @@ h1 {
 @media (max-width: 560px) {
   .landing {
     background-position: center;
-    padding: 22px 22px 86px;
+    padding: 22px 22px 154px;
   }
 
   h1 {
@@ -140,5 +148,9 @@ h1 {
 
   .site-footer {
     inset: auto 16px 14px;
+  }
+
+  .contact-area {
+    inset: auto 16px 92px;
   }
 }
