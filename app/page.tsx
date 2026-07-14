@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactLink } from "./ContactLink";
 
 export const metadata: Metadata = {
   title: "Palmer Codeworks",
@@ -10,9 +11,7 @@ export default function Home() {
     <main className="landing">
       <section className="landing-content" aria-label="Palmer Codeworks">
         <h1>Palmer Codeworks</h1>
-        <a className="contact-link" href="mailto:contact@palmercodeworks.com">
-          Contact
-        </a>
+        <ContactLink />
       </section>
       <footer className="site-footer">
         <p>
