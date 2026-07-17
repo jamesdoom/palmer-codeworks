@@ -32,22 +32,22 @@ export const metadata: Metadata = {
     default: "Palmer Codeworks",
     template: "%s | Palmer Codeworks",
   },
-  description: "Palmer Codeworks developer services.",
+  description: "Custom web apps, automation, and AI tools for small businesses.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
     title: "Palmer Codeworks",
-    description: "Palmer Codeworks developer services.",
+    description: "Custom web apps, automation, and AI tools for small businesses.",
     url: "https://palmercodeworks.com",
     siteName: "Palmer Codeworks",
     images: [
       {
-        url: "/niki_emmert-dirt-road-7273240.jpg",
-        width: 1920,
-        height: 1275,
-        alt: "Sunlit dirt road through green trees",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Palmer Codeworks social preview card with forest road background",
       },
     ],
     locale: "en_US",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Palmer Codeworks",
-    description: "Palmer Codeworks developer services.",
-    images: ["/niki_emmert-dirt-road-7273240.jpg"],
+    description: "Custom web apps, automation, and AI tools for small businesses.",
+    images: ["/og.png"],
   },
 };
 

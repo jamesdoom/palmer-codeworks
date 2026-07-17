@@ -5,7 +5,7 @@ import { SeasonTheme } from "./SeasonTheme";
 
 export const metadata: Metadata = {
   title: "Palmer Codeworks",
-  description: "Palmer Codeworks developer services.",
+  description: "Custom web apps, automation, and AI tools for small businesses.",
 };
 
 export default function Home() {
