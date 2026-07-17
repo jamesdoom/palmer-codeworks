@@ -207,13 +207,33 @@ h1 {
 }
 
 .service-line {
-  color: rgba(255, 248, 234, 0.86);
+  color: #fff8ea;
   font-size: clamp(0.94rem, 1.6vw, 1.15rem);
   font-weight: 700;
+  isolation: isolate;
   line-height: 1.45;
   margin: 18px 0 0;
   max-width: min(88vw, 620px);
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.78);
+  position: relative;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.96),
+    0 3px 12px rgba(0, 0, 0, 0.88),
+    0 0 18px rgba(3, 16, 12, 0.92);
+}
+
+.service-line::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(3, 16, 12, 0.58),
+    rgba(3, 16, 12, 0.34) 48%,
+    transparent 78%
+  );
+  content: "";
+  filter: blur(8px);
+  inset: -5px -18px;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
 }
 
 .contact-link {
