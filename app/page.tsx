@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AmbientLight } from "./AmbientLight";
 import { ContactLink } from "./ContactLink";
+import { SeasonToggle } from "./SeasonToggle";
 
 export const metadata: Metadata = {
   title: "Palmer Codeworks",
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className="landing">
       <AmbientLight />
+      <SeasonToggle />
       <section className="landing-content" aria-label="Palmer Codeworks">
         <h1>Palmer Codeworks</h1>
       </section>
