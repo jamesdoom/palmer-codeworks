@@ -15,6 +15,9 @@ export default function Home() {
       <SeasonTheme />
       <section className="landing-content" aria-label="Palmer Codeworks">
         <h1>Palmer Codeworks</h1>
+        <p className="service-line">
+          Custom web apps, automation, and AI tools for small businesses.
+        </p>
       </section>
       <div className="contact-area" aria-label="Contact Palmer Codeworks">
         <ContactLink />
