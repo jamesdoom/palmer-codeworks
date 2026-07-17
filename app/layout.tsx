@@ -18,6 +18,14 @@ const berkshireSwash = Berkshire_Swash({
   weight: "400",
 });
 
+const seasonScript = `
+(() => {
+  const hour = new Date().getHours();
+  const season = hour >= 5 && hour < 12 ? "morning" : hour >= 18 || hour < 5 ? "night" : "dusk";
+  document.documentElement.dataset.season = season;
+})();
+`;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://palmercodeworks.com"),
   title: {
@@ -59,10 +67,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${berkshireSwash.variable} antialiased`}
       >
+        <script dangerouslySetInnerHTML={{ __html: seasonScript }} />
         {children}
       </body>
     </html>
