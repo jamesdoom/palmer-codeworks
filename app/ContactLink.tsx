@@ -22,13 +22,20 @@ export function ContactLink() {
   }
 
   return (
-    <a
-      className="contact-link"
-      href={`mailto:${email}`}
-      onClick={handleClick}
-      aria-label={`Email ${email}`}
-    >
-      {label}
-    </a>
+    <div className="contact-panel">
+      <p className="availability-status">Accepting select projects · 2026</p>
+      <a
+        className="contact-link"
+        href={`mailto:${email}`}
+        onClick={handleClick}
+        aria-label={`Email ${email}`}
+      >
+        {label}
+      </a>
+      <div className="contact-card" aria-hidden="true">
+        <p>Custom web apps, workflow tools, and integrations.</p>
+        <span>Click to copy, then send a note when you are ready.</span>
+      </div>
+    </div>
   );
 }

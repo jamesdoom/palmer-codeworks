@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AmbientLight } from "./AmbientLight";
 import { ContactLink } from "./ContactLink";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="landing">
+      <AmbientLight />
       <section className="landing-content" aria-label="Palmer Codeworks">
         <h1>Palmer Codeworks</h1>
       </section>
