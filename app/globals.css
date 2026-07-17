@@ -13,6 +13,11 @@
   --hero-shade-top: rgba(3, 16, 12, 0.14);
   --panel-bg: rgba(6, 21, 17, 0.42);
   --panel-border: rgba(255, 248, 234, 0.24);
+  --path-glow-core: rgba(255, 218, 122, 0.2);
+  --path-glow-fade: rgba(255, 218, 122, 0);
+  --path-glow-mid: rgba(255, 176, 82, 0.1);
+  --path-glow-opacity-base: 0.42;
+  --path-glow-opacity-peak: 0.76;
   --theme-text: #fff8ea;
 }
 
@@ -26,6 +31,11 @@
   --hero-shade-top: rgba(255, 234, 185, 0.08);
   --panel-bg: rgba(24, 50, 30, 0.42);
   --panel-border: rgba(255, 248, 234, 0.32);
+  --path-glow-core: rgba(255, 230, 145, 0.24);
+  --path-glow-fade: rgba(255, 230, 145, 0);
+  --path-glow-mid: rgba(255, 195, 102, 0.14);
+  --path-glow-opacity-base: 0.46;
+  --path-glow-opacity-peak: 0.82;
 }
 
 :root[data-season="night"] {
@@ -38,6 +48,11 @@
   --hero-shade-top: rgba(0, 10, 12, 0.34);
   --panel-bg: rgba(2, 12, 16, 0.58);
   --panel-border: rgba(220, 238, 255, 0.24);
+  --path-glow-core: rgba(164, 210, 255, 0.16);
+  --path-glow-fade: rgba(164, 210, 255, 0);
+  --path-glow-mid: rgba(119, 171, 255, 0.08);
+  --path-glow-opacity-base: 0.34;
+  --path-glow-opacity-peak: 0.62;
 }
 
 @theme inline {
@@ -100,6 +115,47 @@ a {
   position: fixed;
   transition: opacity 200ms ease;
   z-index: 0;
+}
+
+.landing::after {
+  animation: path-glow 7.5s ease-in-out infinite;
+  background:
+    radial-gradient(
+      ellipse 10% 32% at 50% 74%,
+      var(--path-glow-core) 0%,
+      var(--path-glow-mid) 42%,
+      var(--path-glow-fade) 74%
+    ),
+    radial-gradient(
+      ellipse 5% 16% at 51% 62%,
+      var(--path-glow-mid) 0%,
+      var(--path-glow-fade) 72%
+    );
+  content: "";
+  filter: blur(1px);
+  inset: 0;
+  mix-blend-mode: screen;
+  opacity: var(--path-glow-opacity-base);
+  pointer-events: none;
+  position: fixed;
+  transform: translateY(8px) scaleX(0.96);
+  transform-origin: 50% 78%;
+  z-index: 0;
+}
+
+@keyframes path-glow {
+  0%,
+  100% {
+    filter: blur(1.4px);
+    opacity: var(--path-glow-opacity-base);
+    transform: translateY(8px) scaleX(0.96);
+  }
+
+  52% {
+    filter: blur(0.4px);
+    opacity: var(--path-glow-opacity-peak);
+    transform: translateY(0) scaleX(1.05);
+  }
 }
 
 .season-toggle {
@@ -302,6 +358,12 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .landing::before {
     display: none;
+  }
+
+  .landing::after {
+    animation: none;
+    opacity: var(--path-glow-opacity-base);
+    transform: translateY(4px);
   }
 
   .contact-card,
