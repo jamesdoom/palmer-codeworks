@@ -139,6 +139,7 @@ h1 {
 .contact-card {
   background: rgba(6, 21, 17, 0.74);
   border: 1px solid rgba(255, 248, 234, 0.22);
+  bottom: calc(100% + 12px);
   color: rgba(255, 248, 234, 0.88);
   left: 50%;
   line-height: 1.5;
@@ -148,8 +149,7 @@ h1 {
   position: absolute;
   text-align: center;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-  top: calc(100% + 12px);
-  transform: translate(-50%, 8px);
+  transform: translate(-50%, -8px);
   transition:
     opacity 180ms ease,
     transform 180ms ease;
