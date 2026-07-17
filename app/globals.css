@@ -360,6 +360,29 @@ h1 {
   }
 }
 
+@media (max-height: 520px) and (orientation: landscape) {
+  .landing {
+    padding: 16px 18px 126px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 11vw, 4.5rem);
+  }
+
+  .service-line {
+    margin-top: 10px;
+    max-width: min(82vw, 560px);
+  }
+
+  .contact-area {
+    inset: auto 18px 78px;
+  }
+
+  .contact-card {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .landing::before {
     display: none;
